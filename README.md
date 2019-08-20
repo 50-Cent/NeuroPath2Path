@@ -30,12 +30,17 @@ For details, please follow the paper.
 % classification
 readinput         :  Read swc files from directory
 computenP2P         :  Compute path features (User can add more features)
+
 computeDSTInter & Intra     : Path alignment + distance between paths
+
 munkres + distanceNeuronNew : Distance between a pair of neurons and path correspondence
-jobClassifyInter and jobClassifyIntra : job script files to run in cluster   
+
+jobClassifyInter and jobClassifyIntra : job script files to run in cluster  
+
 neuroClassifyInterclass and neuroClassifyIntraclass: main files
 
 
 % importance weights
 jobIW : jobscript to get the importance weights
+
 getFeatureWeights : Obtain the importance weights 
