@@ -8,7 +8,7 @@ _________________________ NeuroPath2Path ________________________
 
 1. Set the Directory of data.
 
-Open neuroClassifyInterclass.m (similarly neuroClassifyIntraclass.m for itraclass classification). 
+Open neuroClassifyInterclass.m (similarly neuroClassifyIntraclass.m for intraclass classification). 
 Set the newpath as the path where the directory containing the dataset is present.
 
 
