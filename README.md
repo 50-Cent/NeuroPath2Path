@@ -14,9 +14,11 @@ Set the newpath as the path where the directory containing the dataset is presen
 
 2. Run jobClassifyInter.slurm (similarly jobClassifyIntra.slurm). 
 The default parameter values are given. 
-User can choose different parameters. 
-To do that, open the .slurm file and change the arguments of neuroClassifyInterclass(). 
-Ex: neuroClassifyInterclass(0.2,15,5,3,9) indicates that this instance of experiment tests on the 20% perclass-randomly sampled data. The binwidth of perclass-path distribution is 15. For a test neuron, the closest candidates are searched through step length 5 (search space reduction) and continue till +/- (9*5) paths from the number of paths of the test neuron. Majority vote isperformed on 3 nearest neighbors.   
+User can choose different parameters by opening the .slurm file and changing the arguments of neuroClassifyInterclass(). 
+
+Ex: neuroClassifyInterclass(0.2,15,5,3,9) indicates that this instance of experiment tests on the 20% perclass-randomly sampled data, while rest of the data are used to represent all classes. As mentioned in the paper, we use the number of paths, which is a global feature, of a test neuron (from 20% data) to find the candidates of neurons (from 80% data) to perform majority voting. 
+The binwidth of perclass-path distribution is 15. For a test neuron, the closest candidates are searched through step length 5 (search space reduction) and continue till +/- (9*5) paths from the number of paths of the test neuron. For example, if a test neuron has 60 rooted paths, we searched the possible candidates from 80% of data, which have numbers of paths ranging from 60-(9*5)=15 to 60+(9*5)=105. 
+Majority vote is performed on 3 nearest neighbors.    
 
 For details, please follow the paper.
 
@@ -37,7 +39,7 @@ munkres + distanceNeuronNew : Distance between a pair of neurons and path corres
 
 jobClassifyInter and jobClassifyIntra : job script files to run in cluster  
 
-neuroClassifyInterclass and neuroClassifyIntraclass: main files
+neuroClassifyInterclass and neuroClassifyIntraclass: main files 
 
 
 % importance weights
